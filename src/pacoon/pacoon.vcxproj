@@ -113,10 +113,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="helper.hpp" />
-    <ClInclude Include="inventory.hpp" />
-    <ClInclude Include="machine.hpp" />
-    <ClInclude Include="sort.hpp" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Store.h" />
+    <ClInclude Include="Machine.h" />
+    <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input_files\balloons-1.txt">
@@ -129,6 +130,12 @@
     <Text Include="input_files\balloons-5.txt" />
     <Text Include="input_files\balloons-6.txt" />
     <Text Include="input_files\balloons-7.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pacoon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

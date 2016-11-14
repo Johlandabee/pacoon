@@ -3,19 +3,19 @@
 #include <algorithm>
 
 namespace pacoon {
-	class sort {
+	class Sort {
 	public:
-		static void qsort(int arr[], const int& left, const int& right, const int& size) {
+		static void QuickSort(int arr[], const int& left, const int& right, const int& size) {
 			if (left >= right) return;
 
-			int part = pacoon::sort::partition(arr, left, right);
+			int part = pacoon::Sort::Partition(arr, left, right);
 
-			pacoon::sort::qsort(arr, left, part - 1, size);
-			pacoon::sort::qsort(arr, part + 1, right, size);
+			pacoon::Sort::QuickSort(arr, left, part - 1, size);
+			pacoon::Sort::QuickSort(arr, part + 1, right, size);
 		}
 
 	private:
-		static int partition(int arr[], const int& left, const int& right) {
+		static int Partition(int arr[], const int& left, const int& right) {
 			const int mid = left + (right - left) / 2;
 			const int pivot = arr[mid];
 

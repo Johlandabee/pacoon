@@ -20,16 +20,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="machine.hpp">
+    <ClInclude Include="Helper.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="helper.hpp">
+    <ClInclude Include="Store.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="inventory.hpp">
+    <ClInclude Include="Machine.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="sort.hpp">
+    <ClInclude Include="Sort.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,5 +44,15 @@
     <Text Include="input_files\balloons-6.txt" />
     <Text Include="input_files\balloons-7.txt" />
     <Text Include="input_files\balloons-1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pacoon.rc">
+      <Filter>Ressourcendateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
   </ItemGroup>
 </Project>
