@@ -86,9 +86,8 @@ namespace pacoon {
 		}
 
 		void RestockDistributor() {
-			for (size_t i = 0; i < kOutletCount; ++i) {
+			for (size_t i = 0; i < kOutletCount; ++i)
 				this->distributor_[i] = this->store_.Pop();
-			}
 		}
 
 		pacoon::Store store_;
