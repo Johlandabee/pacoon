@@ -14,7 +14,6 @@
 namespace pacoon {
 	class Helper {
 	public:
-		
 		static bool DoIOwnThisWindow() {
 			HWND console = GetConsoleWindow();
 			DWORD process;

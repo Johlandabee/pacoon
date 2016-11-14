@@ -18,13 +18,12 @@ int main(int argc, char** argv) {
 	const int kOutWidth = 20;
 
 	bool debug = false;
-
-	char* file = "";
 	bool fromFile = false;
-
+	char* file = "";
 	int storeSize = 1000;
 	
 	// Parsing command line arguments.
+	const char* kInvalidParametersMessage = "Invalid parameters";
 	try {
 		for (int i = 0; i < argc; ++i) {
 			if (std::strcmp(argv[i], "-debug") == 0)
@@ -33,7 +32,7 @@ int main(int argc, char** argv) {
 
 			if (std::strcmp(argv[i], "-file") == 0) {
 				if ((i + 1) >= argc || (std::strstr(argv[i + 1], ".txt") == nullptr) || fromFile)
-					throw std::logic_error("Invalid parameters");
+					throw std::logic_error(kInvalidParametersMessage);
 				
 				file = argv[i + 1];
 				fromFile = true;
@@ -41,15 +40,19 @@ int main(int argc, char** argv) {
 
 			if (std::strcmp(argv[i], "-random") == 0) {
 				if ((i + 1) >= argc)
-					throw std::logic_error("Invalid parameters");
+					throw std::logic_error(kInvalidParametersMessage);
 				
+				int value = std::stoi(argv[i + 1]);
 
-				storeSize = std::stoi(argv[i + 1]);
+				if (value < pacoon::Machine::kOutletCount)
+					throw std::logic_error(kInvalidParametersMessage);
+
+				storeSize = value;
 			}
 		}
 	}
 	catch (const std::logic_error e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 
 		return 1;
 	}
@@ -65,7 +68,7 @@ int main(int argc, char** argv) {
 			pacoon::Helper::IntVectorFromFile(file, &store);
 		}
 		catch (std::logic_error e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 
 			return 1;
 		}
@@ -85,7 +88,7 @@ int main(int argc, char** argv) {
 
 	// Calculating and printing the sum of all values within the store.
 	int total = 0;
-	for (size_t i = 0; i < store.size(); ++i){
+	for (size_t i = 0; i < store.size(); ++i) {
 		total += store[i];
 	}
 
