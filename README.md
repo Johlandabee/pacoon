@@ -1,5 +1,5 @@
 # pacoon  
-A balloon packing simulator. Don't ask.  
+A balloon packing simulator. Don't ask. It's for science (school).
 # Usage  
 ````batch
 pacoon.exe -option value
